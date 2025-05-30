@@ -18,11 +18,7 @@ contract ScriptSetup is Script {
         string memory RPC_URL = vm.envString("RPC_URL");
         console2.log("Forking from: %s", RPC_URL);
 
-        liquidStabilityPool = ILiquidStabilityPool(
-            vm.envAddress("LIQUID_STABILITY_POOL_PROXY")
-        );
-        liquidStabilityPoolGetters = LiquidStabilityPoolGetters(
-            vm.envAddress("LSP_GETTERS")
-        );
+        liquidStabilityPool = ILiquidStabilityPool(vm.envAddress("LIQUID_STABILITY_POOL_PROXY"));
+        liquidStabilityPoolGetters = LiquidStabilityPoolGetters(vm.envAddress("LSP_GETTERS"));
     }
 }
