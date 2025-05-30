@@ -10,8 +10,7 @@ contract TestSetup is Test {
     LiquidStabilityPoolGetters liquidStabilityPoolGetters;
 
     function setUp() public virtual {
-        // Select an specific block number to maintian the same state, once we want to test different scensarios, we can have varius forkIds
-        string memory RPC_URL = vm.envString("RPC_URL"); // RPC URL to fork, ideally Anvil with an instance of Berachain testnet
+        string memory RPC_URL = vm.envString("RPC_URL");
         console2.log("Forking from: %s", RPC_URL);
 
         liquidStabilityPool = ILiquidStabilityPool(
