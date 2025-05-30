@@ -18,7 +18,7 @@ contract ScriptSetup is Script {
             vm.envAddress("LIQUID_STABILITY_POOL_PROXY")
         );
         liquidStabilityPoolGetters = LiquidStabilityPoolGetters(
-            vm.envAddress("LIQUID_STABILITY_POOL_GETTERS")
+            vm.envAddress("LSP_GETTERS")
         );
     }
 }
