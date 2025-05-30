@@ -9,6 +9,10 @@ contract TestSetup is Test {
     ILiquidStabilityPool liquidStabilityPool;
     LiquidStabilityPoolGetters liquidStabilityPoolGetters;
 
+    //For any permissioned behaviour after forking contracts
+    //Fee receiver and owner are the same address
+    address owner = vm.envAddress("OWNER");
+
     function setUp() public virtual {
         string memory RPC_URL = vm.envString("RPC_URL");
         console2.log("Forking from: %s", RPC_URL);

@@ -9,6 +9,10 @@ contract ScriptSetup is Script {
     ILiquidStabilityPool liquidStabilityPool;
     LiquidStabilityPoolGetters liquidStabilityPoolGetters;
 
+    //For any permissioned behaviour after forking contracts
+    //Fee receiver and owner are the same address
+    address owner = vm.envAddress("OWNER");
+
     function setUp() public virtual {
         vm.startBroadcast();
         string memory RPC_URL = vm.envString("RPC_URL");
